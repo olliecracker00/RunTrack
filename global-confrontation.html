@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confronto Globale & Statistiche - RunTrack</title>
+    <link rel="icon" type="image/png" href="Assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .source-tag {
+            background: rgba(255, 107, 0, 0.1);
+            color: var(--primary-orange);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .blog-article {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .blog-article:last-child {
+            border-bottom: none;
+        }
+        .blog-article h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .blog-article p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        .data-source {
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-left: 2px solid var(--primary-orange);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <main class="container">
+        <header>
+            <h1>Global<span>Insight</span></h1>
+            <p>Analisi approfondite e statistiche del running mondiale.</p>
+        </header>
+
+        <section class="card">
+            <article class="blog-article">
+                <span class="source-tag">ANALISI STATISTICA</span>
+                <h2>Come vengono calcolati i percentili?</h2>
+                <p>La nostra analisi si basa su un set di dati aggregati che comprende oltre 1 milione di risultati di gare ufficiali (5K, 10K, Mezze Maratone e Maratone) degli ultimi 5 anni.</p>
+                <div class="data-source">
+                    Fonte: Analisi basata su database pubblici di federazioni atletiche internazionali (2020-2025).
+                </div>
+                <p>Utilizziamo una funzione di distribuzione logistica per mappare il tuo passo medio rispetto alla curva di campana della popolazione mondiale di runner amatoriali e competitivi. Questo ci permette di fornirti una stima precisa di dove ti collochi rispetto al resto del mondo.</p>
+            </article>
+
+            <article class="blog-article">
+                <span class="source-tag">TREND 2026</span>
+                <h2>Il passo medio globale è in aumento</h2>
+                <p>Recenti studi indicano che il numero di partecipanti alle maratone è cresciuto del 15% nell'ultimo anno. Tuttavia, il passo medio è leggermente rallentato, indicando un'apertura dello sport a una base di atleti più ampia e diversificata.</p>
+                <p>Mentre i tempi d'élite continuano a infrangere record (grazie anche alle nuove tecnologie delle calzature), il "runner medio" si concentra sempre di più sulla longevità e sul benessere piuttosto che sul solo cronometro.</p>
+            </article>
+        </section>
+
+        <section class="card" style="text-align: center;">
+            <h3>Vuoi approfondire altri dati?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Stiamo preparando nuovi report su cadenza, efficienza e recupero.</p>
+            <a href="index.html" class="btn-primary" style="display: inline-block; width: auto; padding: 0.8rem 2rem; text-decoration: none;">Torna alla Home</a>
+        </section>
+    </main>
+</body>
+</html>
