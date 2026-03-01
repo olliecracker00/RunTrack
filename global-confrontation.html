@@ -85,34 +85,40 @@
         // Gestione Cookie semplice per global-confrontation.html
         document.addEventListener('DOMContentLoaded', () => {
             const banner = document.getElementById('cookie-banner');
+            const overlay = document.getElementById('cookie-overlay');
             const acceptBtn = document.getElementById('accept-cookies');
             const declineBtn = document.getElementById('decline-cookies');
 
             if (!localStorage.getItem('cookieConsent')) {
                 banner.style.display = 'block';
+                overlay.style.display = 'block';
             }
 
             acceptBtn?.addEventListener('click', () => {
                 localStorage.setItem('cookieConsent', 'accepted');
                 banner.style.display = 'none';
+                overlay.style.display = 'none';
             });
 
             declineBtn?.addEventListener('click', () => {
                 localStorage.setItem('cookieConsent', 'declined');
                 banner.style.display = 'none';
+                overlay.style.display = 'none';
             });
         });
     </script>
 
-    <!-- Cookie Banner -->
+    <!-- Cookie Banner & Overlay -->
+    <div id="cookie-overlay" class="cookie-overlay"></div>
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-text">
-                <p>🍪 <strong>Biscottino?</strong> Utilizziamo i cookie per migliorare la tua esperienza su RunTrack. Alcuni sono necessari per il funzionamento, altri ci aiutano a capire come migliorare.</p>
+                <h2>🍪 Accetta i Cookie</h2>
+                <p>Utilizziamo i cookie per analizzare il traffico del sito e migliorare la tua esperienza su RunTrack. Senza la tua scelta non possiamo garantirti tutte le funzionalità del piano personalizzato.</p>
             </div>
             <div class="cookie-buttons">
                 <button id="decline-cookies" class="btn-cookie-decline">Rifiuta</button>
-                <button id="accept-cookies" class="btn-cookie-accept">Accetta Tutti</button>
+                <button id="accept-cookies" class="btn-cookie-accept">Accetta e Continua</button>
             </div>
         </div>
     </div>

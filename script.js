@@ -80,22 +80,26 @@ document.getElementById('run-form').addEventListener('submit', function(e) {
 // Gestione Cookie
 document.addEventListener('DOMContentLoaded', () => {
     const banner = document.getElementById('cookie-banner');
+    const overlay = document.getElementById('cookie-overlay');
     const acceptBtn = document.getElementById('accept-cookies');
     const declineBtn = document.getElementById('decline-cookies');
 
-    // Se non c'è già una preferenza salvata, mostra il banner
+    // Se non c'è già una preferenza salvata, mostra il banner e l'overlay
     if (!localStorage.getItem('cookieConsent')) {
         banner.style.display = 'block';
+        overlay.style.display = 'block';
     }
 
     acceptBtn?.addEventListener('click', () => {
         localStorage.setItem('cookieConsent', 'accepted');
         banner.style.display = 'none';
+        overlay.style.display = 'none';
     });
 
     declineBtn?.addEventListener('click', () => {
         localStorage.setItem('cookieConsent', 'declined');
         banner.style.display = 'none';
+        overlay.style.display = 'none';
     });
 });
 
