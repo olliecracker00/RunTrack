@@ -77,6 +77,28 @@ document.getElementById('run-form').addEventListener('submit', function(e) {
     document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
 });
 
+// Gestione Cookie
+document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+
+    // Se non c'è già una preferenza salvata, mostra il banner
+    if (!localStorage.getItem('cookieConsent')) {
+        banner.style.display = 'block';
+    }
+
+    acceptBtn?.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.style.display = 'none';
+    });
+
+    declineBtn?.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        banner.style.display = 'none';
+    });
+});
+
 function setDistance(km) {
     document.getElementById('distance').value = km;
 }
