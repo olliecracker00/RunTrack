@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Consigli Running - RunTrack</title>
+    <link rel="icon" type="image/png" href="Assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DEK874JKR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3DEK874JKR');
+    </script>
+    <style>
+        .article-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        .article-tag {
+            background: rgba(255, 107, 0, 0.1);
+            color: var(--primary-orange);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            width: fit-content;
+        }
+        .article-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        .article-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .article-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <main class="container">
+        <header>
+            <h1>Run<span>Blog</span></h1>
+            <p>I migliori consigli per migliorare la tua corsa.</p>
+        </header>
+
+                <section class="card" style="padding: 1.5rem 2rem; text-align: center; margin-bottom: 2rem;">
+            <h2>Archivio Articoli</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0.5rem auto 0;">Approfondimenti, guide e consigli per la tua corsa.</p>
+        </section>
+
+        <!-- Elenco Articoli -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+            <a href="blog/correre-sotto-i-5-al-km.html" class="card article-card">
+                <span class="article-tag">TECNICA</span>
+                <h3>Correre sotto i 5 km: consigli pratici</h3>
+                <p>Non partire a caso: stabilisci giorni e obiettivi realistici per migliorare il tuo tempo sui 5km.</p>
+                <span class="article-meta">Lettura: 4 min</span>
+            </a>
+            <a href="blog/idratazione.html" class="card article-card">
+                <span class="article-tag">SALUTE</span>
+                <h3>Idratazione: la chiave per correre meglio</h3>
+                <p>Scopri quanta acqua bere prima, durante e dopo la corsa per massimizzare le performance ed evitare crampi.</p>
+                <span class="article-meta">Lettura: 3 min</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Cookie Banner & Overlay -->
+    <div id="cookie-overlay" class="cookie-overlay"></div>
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h2>🍪 Accetta i Cookie</h2>
+                <p>Utilizziamo i cookie per analizzare il traffico del sito e migliorare la tua esperienza su RunTrack. Senza la tua scelta non possiamo garantirti tutte le funzionalità del piano personalizzato.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="decline-cookies" class="btn-cookie-decline">Rifiuta</button>
+                <button id="accept-cookies" class="btn-cookie-accept">Accetta e Continua</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gestione Cookie semplice per elenco.html
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('cookie-banner');
+            const overlay = document.getElementById('cookie-overlay');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const declineBtn = document.getElementById('decline-cookies');
+
+            if (!localStorage.getItem('cookieConsent')) {
+                banner.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+
+            acceptBtn?.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+
+            declineBtn?.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                banner.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
