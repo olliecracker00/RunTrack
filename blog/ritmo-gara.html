@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cos'è il ritmo gara e come trovarlo? Scopri come calcolare il passo ideale per le tue competizioni di running.">
+    <title>Cos'è il ritmo gara e come trovarlo | RunTrack</title>
+    <link rel="icon" type="image/png" href="../Assets/favicon.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://runtrack.it/blog/ritmo-gara.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DEK874JKR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3DEK874JKR');
+    </script>
+
+    <style>
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 2rem;
+        }
+        .article-content h2 {
+            color: var(--primary-orange);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .article-content p {
+            color: var(--text-main);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+        /* Stili Mini Tool */
+        .tool-container {
+            background: linear-gradient(145deg, #1e1e1e, #252525);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid var(--primary-orange);
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
+        }
+        .tool-container h3 {
+            color: var(--primary-orange);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .tool-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .tool-input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+        .tool-input-group input, .tool-input-group select {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.8rem;
+            border-radius: 10px;
+            color: white;
+            font-family: inherit;
+        }
+        .tool-input-group input:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+        }
+        .btn-calc {
+            grid-column: span 2;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+        .tool-result {
+            display: none;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-orange);
+            margin: 0.5rem 0;
+        }
+        .btn-improve-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            text-decoration: none;
+            padding: 1rem 2rem;
+        }
+        @media (max-width: 600px) {
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+            .btn-calc {
+                grid-column: span 1;
+            }
+        }
+        .article-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <main class="container">
+        <a href="../elenco.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Torna all'elenco
+        </a>
+
+        <header>
+            <h1>Run<span>Insight</span></h1>
+            <p>Cos'è il ritmo gara e come trovarlo</p>
+        </header>
+
+        <article class="article-content">
+            <section>
+                <h2>Definizione di Ritmo Gara</h2>
+                <p>Il ritmo gara è il passo medio (espresso in minuti al chilometro) che un runner è in grado di mantenere costantemente per tutta la durata di una specifica distanza competitiva. Non è semplicemente "correre veloce", ma è la massima velocità sostenibile in equilibrio metabolico per quella determinata sfida.</p>
+            </section>
+
+            <section>
+                <h2>Perché è fondamentale conoscerlo?</h2>
+                <p>Partire troppo forte in una gara è l'errore più comune e spesso porta al "muro" o a un calo drastico delle prestazioni nella seconda metà. Conoscere il proprio ritmo gara permette di gestire le energie in modo intelligente, ottimizzando la performance e migliorando il tempo finale.</p>
+            </section>
+
+            <section>
+                <h2>Metodi per trovare il tuo ritmo</h2>
+                <p>Esistono diversi modi per stimare il proprio passo ideale. Uno dei più affidabili è il test sui 3000 metri o il test di Cooper, i cui risultati possono essere inseriti in calcolatori specifici (come quello di RunTrack) per proiettare i tempi su distanze maggiori come i 10km o la mezza maratona.</p>
+            </section>
+
+            <!-- Mini Tool Calcolatore -->
+            <section class="tool-container">
+                <h3>Calcola il tuo Ritmo Gara Ideale</h3>
+                <div class="tool-grid">
+                    <div class="tool-input-group">
+                        <label>Peso (kg)</label>
+                        <input type="number" id="tool-weight" placeholder="es. 70">
+                    </div>
+                    <div class="tool-input-group">
+                        <label>Altezza (cm)</label>
+                        <input type="number" id="tool-height" placeholder="es. 175">
+                    </div>
+                    <div class="tool-input-group">
+                        <label>Distanza Base (km)</label>
+                        <input type="number" id="tool-dist" placeholder="es. 5">
+                    </div>
+                    <div class="tool-input-group">
+                        <label>Tempo Base (minuti)</label>
+                        <input type="number" id="tool-time" placeholder="es. 25">
+                    </div>
+                    <div class="tool-input-group" style="grid-column: span 2;">
+                        <label>Fatica percepita (1-10)</label>
+                        <input type="range" id="tool-fatigue" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+                        <output style="text-align: center; color: var(--primary-orange); font-weight: 900;">5</output>
+                    </div>
+                    <button class="btn-primary btn-calc" onclick="calculateIdealRacePace()">Calcola Ritmo Ideale</button>
+                </div>
+
+                <div id="tool-result" class="tool-result">
+                    <p>Il tuo ritmo gara ideale stimato è:</p>
+                    <div id="ideal-pace-value" class="result-value">--:--</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Basato sulle tue caratteristiche fisiche e il livello di sforzo attuale.</p>
+                    <a href="#" id="improve-link-tool" class="btn-primary btn-improve-link">Scopri come arrivare a questo passo</a>
+                </div>
+            </section>
+
+            <section>
+                <h2>Allenarsi al ritmo gara</h2>
+                <p>Una volta individuato il target, è essenziale "interiorizzarlo". Inserisci sessioni di allenamento specifico dove corri tratti della distanza totale esattamente al passo obiettivo. Questo insegna al tuo corpo l'efficienza meccanica e la gestione psicologica della fatica a quella velocità.</p>
+            </section>
+
+            <footer class="article-footer">
+                <p>Articolo a cura di RunTrack | <a href="../index.html" style="color: var(--primary-orange); text-decoration: none; font-weight: bold;">Torna alla home</a></p>
+            </footer>
+        </article>
+
+        <!-- Box Prodotti -->
+        <div class="products-promo-card card">
+            <div class="products-content">
+                <img src="../Assets/main-category-product.png" alt="Prodotti Running" class="products-img">
+                <div class="products-info">
+                    <h3>Equipaggiamento Top</h3>
+                    <p>Scopri i migliori prodotti selezionati per migliorare le tue performance.</p>
+                    <a href="../products.html" class="btn-primary btn-products">Scopri i Prodotti</a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <div class="footer-copyright">
+                &copy; 2026 RunTrack.it - Tutti i diritti riservati
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="mailto:info@runtrack.it">Contatti</a>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Cookie Banner & Overlay -->
+    <div id="cookie-overlay" class="cookie-overlay"></div>
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h2>🍪 Accetta i Cookie</h2>
+                <p>Utilizziamo i cookie per analizzare il traffico del sito e migliorare la tua esperienza su RunTrack. Senza la tua scelta non possiamo garantirti tutte le funzionalità del piano personalizzato.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="decline-cookies" class="btn-cookie-decline">Rifiuta</button>
+                <button id="accept-cookies" class="btn-cookie-accept">Accetta e Continua</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateIdealRacePace() {
+            const weight = parseFloat(document.getElementById('tool-weight').value);
+            const height = parseFloat(document.getElementById('tool-height').value);
+            const dist = parseFloat(document.getElementById('tool-dist').value);
+            const time = parseFloat(document.getElementById('tool-time').value);
+            const fatigue = parseInt(document.getElementById('tool-fatigue').value);
+
+            if (!weight || !height || !dist || !time) {
+                alert("Per favore inserisci tutti i parametri.");
+                return;
+            }
+
+            // 1. Calcolo Passo Attuale
+            const currentPace = time / dist; // min/km
+
+            // 2. Calcolo BMI (per un piccolo aggiustamento statistico)
+            const bmi = weight / ((height / 100) ** 2);
+            
+            // 3. Logica di stima Ritmo Ideale
+            // Se la fatica è alta (es. 8), il potenziale di miglioramento è maggiore.
+            // Se la fatica è bassa (es. 2), il passo attuale è già vicino al limite.
+            // Formula empirica: Ideal Pace = Current Pace * (1 - (fatigue - 3) * 0.015)
+            // Più un piccolo bonus se il BMI è ottimale (tra 20 e 23)
+            let adjustmentFactor = (fatigue - 3) * 0.015;
+            if (bmi >= 20 && bmi <= 23) adjustmentFactor += 0.01;
+
+            const idealPace = currentPace * (1 - adjustmentFactor);
+
+            // 4. Formattazione Risultato
+            const idealMin = Math.floor(idealPace);
+            const idealSec = Math.round((idealPace - idealMin) * 60);
+            const formattedPace = `${idealMin}:${idealSec.toString().padStart(2, '0')}`;
+
+            // 5. Mostra Risultati
+            document.getElementById('ideal-pace-value').textContent = `${formattedPace} min/km`;
+            document.getElementById('tool-result').style.display = 'block';
+
+            // 6. Configura Link a improve.html
+            // Parametri richiesti: distance, current, target, percentile
+            // Calcoliamo un percentile approssimativo per far funzionare improve.html
+            const mean = 6.0; // Media statistica generica
+            const scale = 0.8;
+            const percentile = Math.round(100 / (1 + Math.exp((currentPace - mean) / scale)));
+
+            const improveLink = document.getElementById('improve-link-tool');
+            improveLink.href = `../improve.html?distance=${dist}&current=${currentPace.toFixed(2)}&target=${idealPace.toFixed(2)}&percentile=${percentile}`;
+            
+            // Scroll automatico al risultato
+            document.getElementById('tool-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Gestione Cookie
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('cookie-banner');
+            const overlay = document.getElementById('cookie-overlay');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const declineBtn = document.getElementById('decline-cookies');
+
+            if (!localStorage.getItem('cookieConsent')) {
+                banner.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+
+            acceptBtn?.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+
+            declineBtn?.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                banner.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

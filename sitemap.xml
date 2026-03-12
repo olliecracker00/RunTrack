@@ -46,6 +46,20 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  
+  <url>
+    <loc>https://runtrack.it/blog/frequenza-allenamento.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://runtrack.it/blog/ritmo-gara.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- Pagina Improve (anche se dinamica, la sitemap aiuta l'indicizzazione) -->
   <url>
