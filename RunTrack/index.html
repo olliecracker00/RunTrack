@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calcolatore passo running per confronto globale. Analizza le tue performance e confrontati con il mondo.">
+    <title>RunTrack – Tool e guide per runner</title>
+    <link rel="icon" type="image/png" href="Assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://runtrack.it/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DEK874JKR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3DEK874JKR');
+    </script>
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <main class="container">
+        <header>
+            <h1>Run<span>Track</span></h1>
+            <p>Analizza le tue performance e confrontati con il mondo.</p>
+        </header>
+
+        <section class="card input-section">
+            <h2>Inserisci i tuoi dati</h2>
+            <form id="run-form">
+                <div class="form-group">
+                    <label for="distance">Distanza (km)</label>
+                    <div class="distance-input-container">
+                        <input type="number" id="distance" step="0.01" placeholder="es. 5.0" required>
+                        <div class="quick-distances">
+                            <button type="button" class="btn-chip" onclick="setDistance(5)">5K</button>
+                            <button type="button" class="btn-chip" onclick="setDistance(10)">10K</button>
+                            <button type="button" class="btn-chip" onclick="setDistance(21.1)">21K</button>
+                            <button type="button" class="btn-chip" onclick="setDistance(42.2)">42K</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="time">Tempo (minuti)</label>
+                    <input type="number" id="time" step="0.01" placeholder="es. 25.0" required>
+                </div>
+                <div class="form-group">
+                    <label for="heartrate">Battito Medio (bpm - opzionale)</label>
+                    <input type="number" id="heartrate" placeholder="es. 150">
+                </div>
+                <button type="submit" class="btn-primary">Analizza Risultati</button>
+            </form>
+        </section>
+
+        <section id="results" class="results-container hidden">
+            <div class="card result-card">
+                <h3>La tua Performance</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="label">Passo Medio</span>
+                        <span id="pace-result" class="value">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Velocità</span>
+                        <span id="speed-result" class="value">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card advice-card">
+                <h3>I nostri Consigli</h3>
+                <p id="advice-text">Inserisci i dati per ricevere consigli personalizzati.</p>
+            </div>
+
+            <div class="card global-card">
+                <a href="global-confrontation.html" class="card-header-link">
+                    <h3>Confronto Globale <span>→</span></h3>
+                </a>
+                <div class="comparison-bar-container">
+                    <div id="comparison-bar" class="comparison-bar"></div>
+                </div>
+                <p id="comparison-text">Sei più veloce del --% dei runner mondiali.</p>
+                <p id="target-text" class="target-message"></p>
+            </div>
+
+            <div class="upgrade-container">
+                <a href="improve.html" id="upgrade-link" class="btn-upgrade">
+                    <span>Genera piano personalizzato per arrivare al top 20%</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Nuova Box Prodotti -->
+        <div class="products-promo-card card">
+            <div class="products-content">
+                <img src="Assets/main-category-product.png" alt="Prodotti Running" class="products-img">
+                <div class="products-info">
+                    <h3>Equipaggiamento Top</h3>
+                    <p>Scopri i migliori prodotti selezionati per migliorare le tue performance.</p>
+                    <a href="products.html" class="btn-primary btn-products">Scopri i Prodotti</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nuova Box Blog -->
+        <div class="blog-promo-card card">
+            <div class="blog-content">
+                <div class="blog-info">
+                    <h3>Consigli & Allenamento</h3>
+                    <p>Approfondisci la tua tecnica con i nostri articoli dedicati al mondo del running.</p>
+                    <a href="elenco.html" class="btn-primary btn-blog">Vai ai Blog</a>
+                </div>
+                <div class="blog-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h5z"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sezione About & Footer -->
+        <section class="footer-about">
+            <h3>Cos'è RunTrack</h3>
+            <p>RunTrack è una piattaforma dedicata ai runner. Offre strumenti per calcolare il ritmo di corsa, monitorare i progressi e migliorare le prestazioni. Nel blog trovi guide su allenamento, nutrizione e idratazione.</p>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-copyright">
+                &copy; 2026 RunTrack.it - Tutti i diritti riservati
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="mailto:info@runtrack.it">Contatti</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+
+    <!-- Cookie Banner & Overlay -->
+    <div id="cookie-overlay" class="cookie-overlay"></div>
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h2>🍪 Accetta i Cookie</h2>
+                <p>Utilizziamo i cookie per analizzare il traffico del sito e migliorare la tua esperienza su RunTrack. Senza la tua scelta non possiamo garantirti tutte le funzionalità del piano personalizzato.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="decline-cookies" class="btn-cookie-decline">Rifiuta</button>
+                <button id="accept-cookies" class="btn-cookie-accept">Accetta e Continua</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

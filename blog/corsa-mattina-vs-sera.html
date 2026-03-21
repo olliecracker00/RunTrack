@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meglio correre la mattina presto o la sera dopo il lavoro? Scopri i vantaggi e gli svantaggi scientifici di ogni orario e trova il momento ideale per il tuo allenamento.">
+    <title>Correre la mattina o la sera: qual è l'orario migliore? | RunTrack</title>
+    <link rel="icon" type="image/png" href="../Assets/favicon.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://runtrack.it/blog/corsa-mattina-vs-sera.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DEK874JKR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3DEK874JKR');
+    </script>
+
+    <style>
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 2rem;
+        }
+        .article-content h2 {
+            color: var(--primary-orange);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .article-content p {
+            color: var(--text-main);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .comp-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .comp-card h3 {
+            color: var(--primary-orange);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .comp-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.95rem;
+        }
+        .comp-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .comp-list li::before {
+            content: "•";
+            color: var(--primary-orange);
+        }
+
+        /* Stili Quiz Tool */
+        .quiz-container {
+            background: linear-gradient(145deg, #1e1e1e, #252525);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid var(--primary-orange);
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
+        }
+        .quiz-container h3 {
+            color: var(--primary-orange);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+        }
+        .question-text {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .btn-quiz {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 600;
+            text-align: left;
+        }
+        .btn-quiz:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .btn-quiz.active {
+            background: var(--primary-orange);
+            border-color: var(--primary-orange);
+            color: black;
+        }
+        .quiz-result {
+            display: none;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(255, 107, 0, 0.05);
+            border-radius: 15px;
+            border: 1px dashed var(--primary-orange);
+            text-align: center;
+        }
+        .quiz-result h4 {
+            color: var(--primary-orange);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .quiz-result p {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .article-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <main class="container">
+        <a href="../elenco.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Torna all'elenco
+        </a>
+
+        <header>
+            <h1>Run<span>Insight</span></h1>
+            <p>Mattina vs Sera: il dilemma del runner</p>
+        </header>
+
+        <article class="article-content">
+            <section>
+                <h2>Quando è meglio correre?</h2>
+                <p>È una delle domande più antiche nel mondo del running. C'è chi giura che correre all'alba sia l'unico modo per iniziare bene la giornata e chi, invece, non riesce a immaginare nulla di meglio di una corsa rigenerante dopo otto ore di ufficio. La verità? Dipende dai tuoi obiettivi e dal tuo ritmo circadiano.</p>
+            </section>
+
+            <div class="comparison-grid">
+                <div class="comp-card">
+                    <h3>☀️ Correre la Mattina</h3>
+                    <ul class="comp-list">
+                        <li><strong>Boost Metabolico:</strong> Attiva il metabolismo per tutto il giorno.</li>
+                        <li><strong>Costanza:</strong> Meno probabilità di imprevisti che saltano l'allenamento.</li>
+                        <li><strong>Meno Caldo:</strong> Temperature ideali, specialmente in estate.</li>
+                        <li><strong>Focus:</strong> Migliora la chiarezza mentale per il lavoro.</li>
+                    </ul>
+                </div>
+                <div class="comp-card">
+                    <h3>🌙 Correre la Sera</h3>
+                    <ul class="comp-list">
+                        <li><strong>Performance:</strong> I muscoli sono già caldi e i polmoni più efficienti.</li>
+                        <li><strong>Stress Relief:</strong> Ottimo per scaricare le tensioni della giornata.</li>
+                        <li><strong>Sonno:</strong> Se non troppo intensa, può favorire il riposo notturno.</li>
+                        <li><strong>Social:</strong> Più facile organizzarsi con gruppi di corsa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section>
+                <h2>Cosa dice la scienza</h2>
+                <p>Dal punto di vista puramente fisiologico, la temperatura corporea raggiunge il suo picco nel tardo pomeriggio (tra le 16:00 e le 19:00). In questa finestra, la forza muscolare e la capacità polmonare sono al massimo, il che rende la sera l'orario ideale per sessioni di qualità, come ripetute o sprint.</p>
+                <p>Tuttavia, la mattina presto è imbattibile per la gestione del peso e per chi soffre di insonnia, poiché l'esposizione alla luce solare mattutina aiuta a regolare il ciclo sonno-veglia.</p>
+            </section>
+
+            <!-- Quiz Tool -->
+            <section class="quiz-container">
+                <h3>Scopri il tuo orario ideale</h3>
+                <div id="quiz-step-1" class="quiz-question">
+                    <span class="question-text">1. Come ti senti appena sveglio?</span>
+                    <div class="quiz-options">
+                        <button class="btn-quiz" onclick="selectQuizOption(1, 'morning')">Pieno di energia, pronto a scattare.</button>
+                        <button class="btn-quiz" onclick="selectQuizOption(1, 'evening')">Un totale zombie finché non bevo il caffè.</button>
+                    </div>
+                </div>
+                <div id="quiz-step-2" class="quiz-question">
+                    <span class="question-text">2. Qual è il tuo obiettivo principale?</span>
+                    <div class="quiz-options">
+                        <button class="btn-quiz" onclick="selectQuizOption(2, 'morning')">Essere costante e iniziare con grinta.</button>
+                        <button class="btn-quiz" onclick="selectQuizOption(2, 'evening')">Battere i miei record personali (PB).</button>
+                    </div>
+                </div>
+                <div id="quiz-step-3" class="quiz-question">
+                    <span class="question-text">3. Come gestisci lo stress lavorativo?</span>
+                    <div class="quiz-options">
+                        <button class="btn-quiz" onclick="selectQuizOption(3, 'morning')">Preferisco prevenirlo con una mente libera.</button>
+                        <button class="btn-quiz" onclick="selectQuizOption(3, 'evening')">Devo scaricarlo fisicamente a fine giornata.</button>
+                    </div>
+                </div>
+
+                <div id="quiz-result" class="quiz-result">
+                    <p id="result-intro">Il tuo profilo suggerisce:</p>
+                    <h4 id="result-title">Corridore Mattutino!</h4>
+                    <p id="result-desc">Sei un "allodola". Sfrutta le prime luci dell'alba per i tuoi lunghi e goditi la sensazione di aver già vinto la giornata prima ancora di iniziare a lavorare.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Il verdetto finale</h2>
+                <p>Non esiste un "meglio" assoluto. L'orario migliore per correre è quello che ti permette di essere costante. Se correre la mattina significa dormire solo 4 ore, i benefici svaniranno rapidamente. Ascolta il tuo corpo: prova entrambi gli orari per una settimana e osserva come rispondi in termini di energia e umore.</p>
+            </section>
+
+            <footer class="article-footer">
+                <p>Articolo a cura di RunTrack | <a href="../index.html" style="color: var(--primary-orange); text-decoration: none; font-weight: bold;">Torna alla home</a></p>
+            </footer>
+        </article>
+
+        <!-- Box Prodotti -->
+        <div class="products-promo-card card">
+            <div class="products-content">
+                <img src="../Assets/main-category-product.png" alt="Prodotti Running" class="products-img">
+                <div class="products-info">
+                    <h3>Equipaggiamento Top</h3>
+                    <p>Scopri i migliori prodotti selezionati per migliorare le tue performance.</p>
+                    <a href="../products.html" class="btn-primary btn-products">Scopri i Prodotti</a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <div class="footer-copyright">
+                &copy; 2026 RunTrack.it - Tutti i diritti riservati
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="mailto:info@runtrack.it">Contatti</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        let quizScores = { morning: 0, evening: 0 };
+        let answeredQuestions = new Set();
+
+        function selectQuizOption(step, type) {
+            // Impedisci di cambiare voto se non vuoi, o resetta per lo step
+            // In questo caso permettiamo il cambio voto
+            const container = document.getElementById(`quiz-step-${step}`);
+            container.querySelectorAll('.btn-quiz').forEach(btn => btn.classList.remove('active'));
+            
+            // Trova il bottone cliccato e aggiungi active
+            event.currentTarget.classList.add('active');
+            
+            // Logica semplificata: teniamo traccia delle risposte
+            // (In un quiz reale dovremmo sottrarre il punto precedente se cambiato)
+            // Per semplicità, ricalcoliamo tutto ogni volta che cambia qualcosa
+            updateQuizResult();
+        }
+
+        function updateQuizResult() {
+            let morningPoints = 0;
+            let eveningPoints = 0;
+            let totalAnswered = 0;
+
+            for (let i = 1; i <= 3; i++) {
+                const activeBtn = document.querySelector(`#quiz-step-${i} .btn-quiz.active`);
+                if (activeBtn) {
+                    totalAnswered++;
+                    const text = activeBtn.textContent;
+                    // Determiniamo il tipo dalla funzione chiamata (nell'onclick originale)
+                    // In questo caso, usiamo l'attributo o una logica basata sulla posizione
+                    if (activeBtn.getAttribute('onclick').includes('morning')) morningPoints++;
+                    else eveningPoints++;
+                }
+            }
+
+            if (totalAnswered === 3) {
+                const resultDiv = document.getElementById('quiz-result');
+                const title = document.getElementById('result-title');
+                const desc = document.getElementById('result-desc');
+
+                if (morningPoints >= 2) {
+                    title.textContent = "Corridore Mattutino! ☀️";
+                    desc.textContent = "Sei un'allodola. Sfrutta le prime luci dell'alba per i tuoi allenamenti e goditi la sensazione di aver già concluso la tua sfida quotidiana prima di iniziare il lavoro.";
+                } else {
+                    title.textContent = "Corridore Serale! 🌙";
+                    desc.textContent = "Sei un gufo. La tua temperatura corporea e i tuoi livelli di energia raggiungono il picco a fine giornata. Usa la corsa per scaricare lo stress e dare il massimo nelle sessioni di velocità.";
+                }
+
+                resultDiv.style.display = 'block';
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // Gestione Cookie
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('cookie-banner');
+            const overlay = document.getElementById('cookie-overlay');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const declineBtn = document.getElementById('decline-cookies');
+
+            if (!localStorage.getItem('cookieConsent')) {
+                banner.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+
+            acceptBtn?.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+
+            declineBtn?.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                banner.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

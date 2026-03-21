@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cos'è il VO2 Max e perché è il parametro fondamentale per ogni runner? Scopri come calcolarlo, come migliorarlo e cosa dice sulla tua forma fisica.">
+    <title>VO2 Max: Cos'è e come migliorarlo | RunTrack</title>
+    <link rel="icon" type="image/png" href="../Assets/favicon.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://runtrack.it/blog/vo2-max-spiegazione.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DEK874JKR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3DEK874JKR');
+    </script>
+
+    <style>
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 2rem;
+        }
+        .article-content h2 {
+            color: var(--primary-orange);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .article-content p {
+            color: var(--text-main);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Stili Calcolatore VO2 Max */
+        .tool-container {
+            background: linear-gradient(145deg, #1e1e1e, #252525);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid var(--primary-orange);
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
+        }
+        .tool-container h3 {
+            color: var(--primary-orange);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .tool-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .tool-input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+        .tool-input-group input, .tool-input-group select {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.8rem;
+            border-radius: 10px;
+            color: white;
+            font-family: inherit;
+        }
+        .btn-calc {
+            grid-column: span 2;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+        .tool-result {
+            display: none;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .result-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-orange);
+            margin: 0.5rem 0;
+        }
+        .result-rating {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .data-table th, .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .data-table th {
+            color: var(--primary-orange);
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+            .btn-calc {
+                grid-column: span 1;
+            }
+        }
+
+        .article-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <main class="container">
+        <a href="../elenco.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Torna all'elenco
+        </a>
+
+        <header>
+            <h1>Run<span>Insight</span></h1>
+            <p>VO2 Max: Il motore dell'atleta</p>
+        </header>
+
+        <article class="article-content">
+            <section>
+                <h2>Cos'è il VO2 Max?</h2>
+                <p>Il VO2 Max, o massimo consumo di ossigeno, è la quantità massima di ossigeno che il tuo corpo può utilizzare durante un esercizio intenso. È considerato il "gold standard" per misurare la capacità cardiorespiratoria e la resistenza aerobica di un atleta.</p>
+                <p>Si esprime solitamente in <strong>ml/kg/min</strong> (millilitri di ossigeno per chilogrammo di peso corporeo al minuto). Più alto è questo valore, più "motore" hai a disposizione per alimentare i tuoi muscoli durante la corsa.</p>
+            </section>
+
+            <section>
+                <h2>Perché è importante per i runner?</h2>
+                <p>Immagina il tuo corpo come un'auto: il VO2 Max è la cilindrata del motore. Un runner con un VO2 Max elevato può trasportare e utilizzare più ossigeno, producendo più energia per mantenere velocità elevate più a lungo senza andare in debito d'ossigeno.</p>
+                <p>Sebbene la genetica giochi un ruolo importante (circa il 50%), l'allenamento specifico può migliorare significativamente questo valore, specialmente nei principianti e negli atleti intermedi.</p>
+            </section>
+
+            <!-- Tool: Calcolatore Stima VO2 Max (Test di Cooper) -->
+            <section class="tool-container">
+                <h3>Stima il tuo VO2 Max</h3>
+                <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Inserisci la distanza percorsa in 12 minuti (Test di Cooper).</p>
+                
+                <div class="tool-grid">
+                    <div class="tool-input-group">
+                        <label>Distanza (metri)</label>
+                        <input type="number" id="cooper-dist" placeholder="es. 2400">
+                    </div>
+                    <div class="tool-input-group">
+                        <label>Età</label>
+                        <input type="number" id="user-age" placeholder="es. 30">
+                    </div>
+                    <div class="tool-input-group" style="grid-column: span 2;">
+                        <label>Genere</label>
+                        <select id="user-gender">
+                            <option value="male">Uomo</option>
+                            <option value="female">Donna</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary btn-calc" onclick="calculateVO2Max()">Calcola VO2 Max</button>
+                </div>
+
+                <div id="vo2-result" class="tool-result">
+                    <p>Il tuo VO2 Max stimato è:</p>
+                    <div id="vo2-value" class="result-value">--</div>
+                    <div id="vo2-rating" class="result-rating">--</div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Valore espresso in ml/kg/min basato sulla formula di Cooper.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Come migliorare il VO2 Max</h2>
+                <p>Per alzare l'asticella del tuo massimo consumo di ossigeno, devi spingere il sistema cardiovascolare vicino ai suoi limiti. Gli allenamenti più efficaci sono:</p>
+                <ul>
+                    <li><strong>Ripetute Lunghe (800m - 1200m):</strong> Corse a un'intensità vicina al 90-95% della frequenza cardiaca massima.</li>
+                    <li><strong>Interval Training:</strong> Alternanza di sforzi intensi e recuperi attivi.</li>
+                    <li><strong>HIIT:</strong> Allenamenti ad alta intensità che mettono a dura prova il cuore.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Valori di riferimento</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Livello</th>
+                            <th>Uomini (ml/kg/min)</th>
+                            <th>Donne (ml/kg/min)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Elite</td>
+                            <td>75+</td>
+                            <td>65+</td>
+                        </tr>
+                        <tr>
+                            <td>Ottimo</td>
+                            <td>55 - 65</td>
+                            <td>45 - 55</td>
+                        </tr>
+                        <tr>
+                            <td>Buono</td>
+                            <td>45 - 54</td>
+                            <td>35 - 44</td>
+                        </tr>
+                        <tr>
+                            <td>Medio</td>
+                            <td>35 - 44</td>
+                            <td>30 - 34</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Nota: Atleti d'elite come Kilian Jornet o maratoneti olimpici possono superare valori di 85-90 ml/kg/min.</p>
+            </section>
+
+            <footer class="article-footer">
+                <p>Articolo a cura di RunTrack | <a href="../index.html" style="color: var(--primary-orange); text-decoration: none; font-weight: bold;">Torna alla home</a></p>
+            </footer>
+        </article>
+
+        <!-- Box Prodotti -->
+        <div class="products-promo-card card">
+            <div class="products-content">
+                <img src="../Assets/main-category-product.png" alt="Prodotti Running" class="products-img">
+                <div class="products-info">
+                    <h3>Equipaggiamento Top</h3>
+                    <p>Scopri i migliori prodotti selezionati per migliorare le tue performance.</p>
+                    <a href="../products.html" class="btn-primary btn-products">Scopri i Prodotti</a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <div class="footer-copyright">
+                &copy; 2026 RunTrack.it - Tutti i diritti riservati
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="mailto:info@runtrack.it">Contatti</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function calculateVO2Max() {
+            const dist = parseFloat(document.getElementById('cooper-dist').value);
+            const age = parseInt(document.getElementById('user-age').value);
+            const gender = document.getElementById('user-gender').value;
+
+            if (!dist || !age) {
+                alert("Per favore inserisci distanza ed età.");
+                return;
+            }
+
+            // Formula di Cooper: VO2 Max = (Distanza in metri - 504.9) / 44.73
+            const vo2max = (dist - 504.9) / 44.73;
+            
+            const displayValue = vo2max.toFixed(1);
+            document.getElementById('vo2-value').textContent = displayValue;
+
+            // Rating semplificato
+            let rating = "";
+            if (gender === 'male') {
+                if (vo2max > 60) rating = "Eccezionale";
+                else if (vo2max > 52) rating = "Ottimo";
+                else if (vo2max > 42) rating = "Buono";
+                else if (vo2max > 35) rating = "Medio";
+                else rating = "Da migliorare";
+            } else {
+                if (vo2max > 54) rating = "Eccezionale";
+                else if (vo2max > 45) rating = "Ottimo";
+                else if (vo2max > 35) rating = "Buono";
+                else if (vo2max > 30) rating = "Medio";
+                else rating = "Da migliorare";
+            }
+
+            const ratingEl = document.getElementById('vo2-rating');
+            ratingEl.textContent = rating;
+            
+            // Colori dinamici per il rating
+            if (rating === "Eccezionale" || rating === "Ottimo") ratingEl.style.color = "#00ff88";
+            else if (rating === "Buono") ratingEl.style.color = "var(--primary-orange)";
+            else ratingEl.style.color = "#ff4444";
+
+            document.getElementById('vo2-result').style.display = 'block';
+            document.getElementById('vo2-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Gestione Cookie
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('cookie-banner');
+            const overlay = document.getElementById('cookie-overlay');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const declineBtn = document.getElementById('decline-cookies');
+
+            if (!localStorage.getItem('cookieConsent')) {
+                banner.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+
+            acceptBtn?.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+
+            declineBtn?.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                banner.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
